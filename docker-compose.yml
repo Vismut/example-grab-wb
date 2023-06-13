@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  graber:
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "16m"
+    tty: true
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: grab-wb
+    hostname: grab-wb
